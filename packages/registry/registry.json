@@ -36,13 +36,15 @@
         "main": {
           "path": "components/layouts/aspect-ratio/index.tsx",
           "type": "component"
-          }
+        }
       }
     },
     "box": {
       "name": "Box",
       "description": "A versatile container component",
-      "dependencies": ["framer-motion"],
+      "dependencies": [
+        "framer-motion"
+      ],
       "files": {
         "main": {
           "path": "components/box/index.tsx",
@@ -310,7 +312,9 @@
     "form": {
       "name": "Form",
       "description": "A utility component that provides adjustable spacing between elements without adding extra visual content.",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": {
         "main": {
           "path": "components/layout/form/index.tsx",
@@ -318,7 +322,6 @@
         }
       }
     },
-
     "steppers": {
       "name": "Steppers",
       "description": "An animated steppers component with different variants",
@@ -382,10 +385,23 @@
     "container": {
       "name": "Container",
       "description": "A flexible container component for constraining content width with responsive padding and centering options.",
-      "dependencies": ["class-variance-authority"],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "files": {
         "main": {
           "path": "components/layouts/container/index.tsx",
+          "type": "component"
+        }
+      }
+    },
+    "ala": {
+      "name": "ala",
+      "description": "Auto-generated ala component",
+      "dependencies": [],
+      "files": {
+        "main": {
+          "path": "components/ala/index.tsx",
           "type": "component"
         }
       }

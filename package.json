@@ -2,6 +2,7 @@
   "name": "ignix-ui",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
@@ -10,6 +11,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "generate-component": "node --loader ts-node/esm scripts/generate-component.ts",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
     "release": "changeset publish",
