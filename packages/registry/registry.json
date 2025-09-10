@@ -394,17 +394,6 @@
           "type": "component"
         }
       }
-    },
-    "ala": {
-      "name": "ala",
-      "description": "Auto-generated ala component",
-      "dependencies": [],
-      "files": {
-        "main": {
-          "path": "components/ala/index.tsx",
-          "type": "component"
-        }
-      }
     }
   }
 }
