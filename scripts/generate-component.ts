@@ -7,13 +7,9 @@ import { updateRegistry } from './utils/registry.js';
 
 // CLI argument
 const args = process.argv.slice(2);
-let componentName = '';
+const nameArg = args.find((arg) => arg.startsWith('--name='));
+const componentName = nameArg?.split('=')[1];
 
-for (const arg of args) {
-  if (arg.startsWith('--name=')) {
-    componentName = arg.split('=')[1];
-  }
-}
 if (!componentName) {
   console.error('Please provide a component name');
   process.exit(1);
