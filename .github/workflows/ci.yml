@@ -3,6 +3,7 @@ jobs:
   check_scope:
     runs-on: ubuntu-latest
     outputs:
+    
       scope: ${{ steps.scope-check.outputs.scope }}
     steps:
       - name: Checkout repository
