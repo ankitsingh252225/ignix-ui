@@ -3,7 +3,8 @@ name: CI Workflow Ignix-UI
 on:
   push:
     branches:
-      - '**'
+      - main
+      - check-code 
   pull_request:
     branches:
       - main
@@ -60,4 +61,4 @@ jobs:
         run: echo "🔍 CI job executed because valid scope was found in commit message"
 
       - name: Debug scope output
-        run: echo "Scope output is:${{ steps.scope-check.outputs.scope }}"
+      - run: echo "Scope output is:${{ steps.scope-check.outputs.scope }}"

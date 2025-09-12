@@ -5,5 +5,5 @@ module.exports = {
     'scope-empty': [2, 'never'],
     'scope-case': [2, 'always', 'lower-case'],
   },
-  ignores: [message => message.includes('[skip-commitlint]')],
+  ignores: [message => message.includes('[skip-commitlint]')]
 };
