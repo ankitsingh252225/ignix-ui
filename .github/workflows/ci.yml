@@ -3,8 +3,7 @@ name: CI Workflow Ignix-UI
 on:
   push:
     branches:
-      - main
-      - check-code 
+      - '**'
   pull_request:
     branches:
       - main
