@@ -1,5 +1,16 @@
 name: CI Workflow Ignix-UI
+jobs:
+  check_scope:
+    runs-on: ubuntu-latest
+    outputs:
+      scope: ${{ steps.scope-check.outputs.scope }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      - name: Run scope check
+        id: scope-check
+        run: bash scripts/check-scope.sh
 on:
   push:
     branches:
@@ -12,6 +23,8 @@ on:
 jobs:
   build:
     name: '@mindfiredigital/ignix-ui'
+    needs: check_scope
+    if: needs.check_scope.outputs.scope == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -41,3 +54,5 @@ jobs:
 
       - name: 'Run lint'
         run: pnpm run lint
+      - name: Log scope status
+        run: echo "🔍 CI job executed because valid scope was found in commit message"
