@@ -3,8 +3,7 @@ name: CI Workflow Ignix-UI
 on:
   push:
     branches:
-      - main
-      - check-code 
+      - "**"  # Allow CI on all branches
   pull_request:
     branches:
       - main
@@ -21,8 +20,9 @@ jobs:
 
       - name: Run scope check
         id: scope-check
-        run: bash scripts/check-scope.sh
-
+        run: |
+          bash scripts/check-scope.sh
+          echo "scope=${scope}" >> $GITHUB_OUTPUT
   build:
     name: '@mindfiredigital/ignix-ui'
     needs: check_scope
@@ -59,6 +59,6 @@ jobs:
 
       - name: Log scope status
         run: echo "🔍 CI job executed because valid scope was found in commit message"
-        
+
       - name: Debug scope output
-        run: echo "Scope output is:${{ steps.scope-check.outputs.scope }}"
+        run: echo "Scope output is:${{ needs.check_scope.outputs.scope }}"

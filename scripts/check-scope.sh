@@ -5,7 +5,7 @@ COMMIT_MSG=$(git log -1 --pretty=%B)
 echo "📝 Commit message: $COMMIT_MSG"
 
 # Define valid scopes
-VALID_SCOPES=("cli" "docs" "release" "registry" "storybook" "component")
+VALID_SCOPES=("cli" "docs" "release" "registry" "poc" "storybook")
 
 # Check for scope match j
 for scope in "${VALID_SCOPES[@]}"; do
